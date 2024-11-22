@@ -1,0 +1,96 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/mobile_navigation"
+    app:startDestination="@+id/navigation_latest">
+
+    <fragment
+        android:id="@+id/navigation_favorite"
+        android:name="com.apcoding.animania.ui.fragments.FavoriteFragment"
+        android:label="@string/title_favorite"
+        tools:layout="@layout/fragment_favorite">
+        <action
+            android:id="@+id/action_navigation_favorite_to_navigation_anime"
+            app:destination="@id/navigation_anime">
+            <argument
+                android:name="animeLink"
+                android:defaultValue="null"
+                app:argType="string" />
+        </action>
+    </fragment>
+
+    <fragment
+        android:id="@+id/navigation_latest"
+        android:name="com.apcoding.animania.ui.fragments.LatestFragment"
+        android:label="@string/title_latest"
+        tools:layout="@layout/fragment_latest">
+        <action
+            android:id="@+id/action_navigation_latest_to_navigation_anime"
+            app:destination="@id/navigation_anime">
+            <argument
+                android:name="animeLink"
+                android:defaultValue="null"
+                app:argType="string" />
+        </action>
+    </fragment>
+
+    <fragment
+        android:id="@+id/navigation_trending"
+        android:name="com.apcoding.animania.ui.fragments.TrendingFragment"
+        android:label="@string/title_trending"
+        tools:layout="@layout/fragment_trending">
+        <action
+            android:id="@+id/action_navigation_trending_to_navigation_anime"
+            app:destination="@id/navigation_anime">
+            <argument
+                android:name="animeLink"
+                android:defaultValue="null"
+                app:argType="string" />
+        </action>
+    </fragment>
+    <fragment
+        android:id="@+id/navigation_search"
+        android:name="com.apcoding.animania.ui.fragments.SearchFragment"
+        android:label="@string/title_search"
+        tools:layout="@layout/fragment_search">
+        <action
+            android:id="@+id/action_navigation_search_to_navigation_anime"
+            app:destination="@id/navigation_anime">
+            <argument
+                android:name="animeLink"
+                android:defaultValue="null"
+                app:argType="string" />
+        </action>
+    </fragment>
+
+    <fragment
+        android:id="@+id/navigation_anime"
+        android:name="com.apcoding.animania.ui.fragments.AnimeFragment"
+        android:label="@string/anime_details_title"
+        tools:layout="@layout/fragment_anime">
+        <argument
+            android:name="animeLink"
+            app:argType="string"
+            app:nullable="true" />
+        <action
+            android:id="@+id/action_navigation_anime_to_navigation_player"
+            app:destination="@id/navigation_player" />
+    </fragment>
+
+    <fragment
+        android:id="@+id/navigation_settings"
+        android:name="com.apcoding.animania.ui.fragments.SettingsFragment"
+        android:label="@string/settings" />
+
+    <fragment
+        android:id="@+id/navigation_player"
+        android:name="com.apcoding.animania.ui.fragments.PlayerFragment"
+        android:label="@string/player"
+        tools:layout="@layout/fragment_player">
+        <argument
+            android:name="animePlayingDetails"
+            app:argType="com.apcoding.animania.model.AnimePlayingDetails"
+            app:nullable="true" />
+    </fragment>
+</navigation>

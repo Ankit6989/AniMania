@@ -1,0 +1,78 @@
+<PreferenceScreen xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <PreferenceCategory
+        app:key="theme"
+        app:title="@string/theme_cat_title">
+
+        <SwitchPreferenceCompat
+            app:defaultValue="true"
+            app:key="dynamic_colors"
+            app:summaryOff="@string/dynamic_colors_disabled_summary"
+            app:summaryOn="@string/dynamic_colors_enabled_summary"
+            app:title="@string/dynamic_colors_title" />
+
+        <ListPreference
+            app:defaultValue="follow_system"
+            app:entries="@array/dark_mode_entries"
+            app:entryValues="@array/dark_mode_values"
+            app:key="dark_mode"
+            app:title="@string/dark_mode_pref_title"
+            app:useSimpleSummaryProvider="true" />
+
+    </PreferenceCategory>
+
+    <PreferenceCategory app:title="@string/source_cat_title"
+        app:key="source_pref_category">
+<!--        <ListPreference-->
+<!--            app:defaultValue="yugen"-->
+<!--            app:entries="@array/sources_entries"-->
+<!--            app:entryValues="@array/sources_values"-->
+<!--            app:key="source"-->
+<!--            app:title="@string/source_list_pref_title"-->
+<!--            app:useSimpleSummaryProvider="true" />-->
+    </PreferenceCategory>
+
+    <PreferenceCategory app:title="@string/player_cat_title">
+
+        <SwitchPreferenceCompat
+            app:key="external_player"
+            app:summaryOff="@string/external_player_off_summary"
+            app:summaryOn="@string/external_player_on_summary"
+            app:title="@string/external_player_title" />
+
+        <SwitchPreferenceCompat
+            app:dependency="external_player"
+            app:key="mx_player"
+            app:summary="@string/mx_player_summary"
+            app:title="@string/mx_player_title" />
+
+        <SwitchPreferenceCompat
+            app:defaultValue="true"
+            app:key="pip"
+            app:summaryOff="@string/pip_disabled"
+            app:summaryOn="@string/pip_enabled"
+            app:title="@string/pip_title" />
+
+        <SwitchPreferenceCompat
+            app:defaultValue="true"
+            app:key="video_cache"
+            app:summaryOff="@string/video_cache_perf_summray_enabled"
+            app:summaryOn="@string/video_cache_perf_summray_disabled"
+            app:title="@string/video_cache_perf_title" />
+
+        <SwitchPreferenceCompat
+            app:defaultValue="true"
+            app:key="auto_play"
+            app:summary="@string/auto_play_summary"
+            app:title="@string/auto_play_title" />
+
+    </PreferenceCategory>
+
+    <PreferenceCategory app:title="Update">
+        <Preference
+            app:key="check_update"
+            app:summary="@string/check_update_pref_summary"
+            app:title="@string/check_update_pref" />
+    </PreferenceCategory>
+
+</PreferenceScreen>
