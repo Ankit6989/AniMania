@@ -32,3 +32,9 @@
 - [Swiperefreshlayout](https://developer.android.com/jetpack/androidx/releases/swiperefreshlayout) - For swipe to refresh layouts
 - [ExoPlayer](https://exoplayer.dev/) - For video playback
 - [Dagger-Hilt](https://dagger.dev/hilt/) For [Dependency injection (DI)](https://developer.android.com/training/dependency-injection)
+
+### 🖥️ Screens
+
+<img src = "https://github.com/user-attachments/assets/7dce72c5-297c-42ff-a2b5-cb9ce227f883" width="800">
+
+
